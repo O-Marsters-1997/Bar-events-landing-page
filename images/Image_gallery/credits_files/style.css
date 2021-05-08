@@ -1,0 +1,284 @@
+
+/*Root values for landing page */
+
+:root {
+	--nav: #fff;
+	--content: rgb(250, 243, 242);
+	--social_media: rgb(272, 236, 212);
+}
+
+
+body {
+	margin: 0;
+	background-color: var(--content);
+}
+
+
+/*Navigation starts here */
+
+.top_navigation {
+	background-color: var(--content); 
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+}
+
+.bar_logo {
+	margin: 10px 75px;
+	float: left;
+	width: 100px;
+	height: auto;
+}
+
+nav {
+	position: absolute;
+	float: right;
+	text-align: left;
+	background-color: var(--content);
+	top: 100% ;
+	left: 0px;
+	width: 100%;
+	display: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {margin-bottom: 1em;
+	margin-left: 1em;
+}
+
+nav a {
+	color: black;
+	text-decoration: none;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+/*Navigation fundtionality starts here */
+
+nav a:hover {
+	color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+	display: block;
+}
+
+.nav-toggle {
+	display: none;
+}
+
+.nav-toggle-label {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	display: flex;
+	align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	display: block;
+	background: #333;
+	height: 3px;
+	width: 2em;
+	border-radius: 2px;
+	position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	content: '';
+}
+
+.nav-toggle-label span::before {
+	bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+	top: 5px;
+}
+
+.backgroundImage {
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-image: url(images/backgroundphoto.jpg);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+
+/*Service section starts here */
+
+.service_section {
+	margin-top: 10px;
+	background-color: var(--content);
+}
+
+.content_grid {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, auto);
+	justify-items: center;
+}
+
+.service_title {
+	grid-column: 2 / 3;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2.5em;
+	padding-top: 20px;
+}
+
+.content_grid img {
+	height: 200px;
+}
+
+.festival_heading {
+	grid-column: 1 
+}
+
+
+.festival_photo {
+	grid-column: 1 / span 1; 
+}
+
+.wedding_photo {
+	grid-column: 2 / auto;
+}
+
+.corporate_photo {
+	grid-column: 3 / auto;
+}
+
+/*Follow us */
+
+.social_media {
+	grid-column: 1 / -1;
+	margin-top: 25px;
+	padding-top: 2.5vh;
+	width: 100%;
+	text-align: center;
+	color: var(--content);
+	font-size: 1.5em;
+	font-style: italic;
+	background-color: #848385;
+}
+
+.social_media ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	padding: 0px
+}
+
+.social_media li {
+	padding: 10px;
+	color: var(--content);
+	font-size: 1rem;
+}
+
+.Social_media li:hover {
+	color: rgb(272, 236, 212);
+	font-size: 1.1em;
+}
+
+.social_media > h1:hover {
+	font-size: 1.6em;
+	color: var(--social_media)
+}
+
+.Follow_us_ul {
+	grid-column: 2 / 3;
+	justify-items: center;
+	display: relative;
+	width: 16vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image_gallery_grid {
+	
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 
+}
+
+.image_gallery_grid img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.gallery_photo1 {
+	grid-column-start: 2;
+	grid-row: 2 / 3;
+}
+
+/*.gallery_photo2 {
+	grid-row: 2;
+}
+
+.gallery_photo3 {
+	grid-row: 2;
+}
+
+.gallery_photo4 {
+	grid-row: 2;
+}
+
+.gallery_photo5 {
+	grid-row: 3;
+}
+
+.gallery_photo6 {
+	grid-row: 3;
+}
+
+.gallery_photo7 {
+	grid-row: 3;
+}
+
+.gallery_photo8 {
+	grid-row: 3;
+}
+
+*/
+/*  Gallery Image Sizes */
+
+.normal {
+	grid-column: auto / span 1;
+}
+
+.long {
+
+}
+
+.big {
+
+}
+
+/*Footer starts here*/
+
+.footer_bar {
+	height: 100px;
+	background-color: red;
+}
+
+.credits {
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	
+}
+
