@@ -9,6 +9,7 @@ Color scheme ideas list:
 :root {
 	--nav: #fff;
 	--content: rgb(240, 243, 242);
+	--content-alt: rgb(66, 48, 66);
 	--content_alt: rgb(66, 48, 66);
 	--social_media: rgb(272, 236, 212);
 	--social_media_background: rgb(132, 131, 133);
@@ -217,10 +218,24 @@ nav a:hover {
 }
 
 .service_image {
+	position: relative;
 	width: 400px;
 	height: 450px;
 	margin: 15px;
 }
+
+.image_overlay {
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: linear-gradient(180deg, 
+	rgba(66,48,66,0) 0%,
+	rgba(66,48,66,0) 40%,
+	rgba(66,48,66,0.4) 60%,
+	rgba(66,48,66,0.8) 100%);
+} 
 
 .service_title {
 	grid-column: 2 / 3;
@@ -252,11 +267,77 @@ nav a:hover {
 	}
 }
 
-.break {
-	height: 10vh;
-	max-height: 200px;
-	background-color: #423042;
-	grid-column: 1 / -1;
+/*Details Section */
+
+/* Repeated styles*/
+
+.mission_statement p, .expectations_text p {
+	font-size: clamp(0.85em, 1.65vw, 1.1em);
+	margin: 1em 2em ;
+}
+
+.mission_image {
+	grid-column: 1 / span 6;
+	height: 40vh;
+}
+
+.mission_statement  {
+	grid-column: 7 / -1;
+	padding-top: 2rem; 
+	background-color: var(--content_alt);
+	color: var(--content);
+}
+
+.mission_statement h2, .expectations_text h2 {
+	margin-left: 2rem;
+}
+
+.mission_statement p {
+	margin: 1em 2em ;
+	max-width: 550px;
+	text-align: justify;
+	font-size: ;
+}
+
+@media(max-width: 660px) {
+	.mission_image {
+		grid-column: 1 / -1;
+	}
+
+	.mission_statement {
+		grid-column: 1 / -1;
+		padding-bottom: 2em;
+	}
+}
+
+.expectations_text {
+	grid-column: 1 / span 6;	
+}
+
+.expectations_images {
+	display: flex;
+	flex-direction: column;
+	grid-column: 7 / -1;
+}
+
+.expectations_images img {
+	max-width: 500px;
+	margin-left: 3em;
+	padding: 10px 0; 
+	border-radius: 50px: 
+}
+
+.expectations_images img:first-child {
+	max-height: 30vh;
+	object-position: 50% 0%;
+	
+}
+
+.expectations_images img:nth-child(2) {
+	max-height: 25vh;
+	object-position: 50% 10%;
+	object-position: 50% 80%;
+
 }
 
 /*Follow us */
@@ -320,6 +401,7 @@ nav a:hover {
 	grid-template-rows: repeat(9, 7.5vh);
 	grid-auto-flow: dense;
 	grid-gap: 5px;
+	padding: 0 5px;
 }
 
 .gallery_item {
