@@ -1,9 +1,15 @@
 
-/*Root values for landing page */
+/*Root values for landing page 
+
+Color scheme ideas list:
+#F0EEDE;
+
+*/
 
 :root {
 	--nav: #fff;
 	--content: rgb(240, 243, 242);
+	--content_alt: rgb(66, 48, 66);
 	--social_media: rgb(272, 236, 212);
 	--social_media_background: rgb(132, 131, 133);
 }
@@ -32,6 +38,10 @@ li {
 a {
 	color: var(--content);
 	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
 }
 
 /*Navigation starts here */
@@ -130,36 +140,49 @@ nav a:hover {
 
 .backgroundImage {
 	height: 100vh;
-	display: flex;
+	position: relative;
 	background-size: cover;
 	background-position: center;
-	background-image: url(images/backgroundphoto.jpg);
+	background-image: url(images/backgroundphotoalt.jpg);
 	background-repeat: no-repeat;
+	filter: grayscale(40%);
 	margin: 0 auto;
 }
 
-/*Service section starts here */
-
-.service_section {
-	margin-top: 10px;
-	background-color: var(--content);
+.background_overlay {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	color: white;
+	background: rgba(0, 0, 0, 0.55);
+	z-index: -1;
 }
 
-
-
-
-
-.service_title {
-	grid-column: 2 / 3;
+.background_wrapper {
+	margin-top: 60vh;
 	text-align: center;
-	font-weight: 600;
-	font-size: 2.5em;
-	padding-top: 20px;
 }
 
+.background_wrapper h1 {
+	text-transform: uppercase;
+}
+
+.background_overlay button {
+	color: #fff;
+	background-color: var(--content_alt);
+	font-size: 1.5em;
+}
+
+
+/*Service section starts here */
 .content_grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: 1fr;
 }
 
@@ -170,21 +193,70 @@ nav a:hover {
 }
 
 
-
-.festival_photo {
-	grid-column: 1 / span 1; 
-}
-
-.wedding_photo {
-	grid-column: 2 / span 1;
-}
-
-.corporate_photo {
-	grid-column: 3 / span 1;
-}
-
 .service_heading {
 	text-align: center;
+}
+
+.all_services {
+	grid-column: 1 / -1;
+}
+
+
+.service_section {
+	margin-top: 10px;
+	background-color: var(--content);
+}
+
+.service_images {
+	grid-column: 1 / -1;
+	border: none;
+	display: flex;
+	justify-content: space-around;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.service_image {
+	width: 400px;
+	height: 450px;
+	margin: 15px;
+}
+
+.service_title {
+	grid-column: 2 / 3;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2.5em;
+	padding-top: 20px;
+}
+
+@media (max-width: 1300px) {
+
+	.service_image {
+		width: 250px;
+		height: 350px;
+		margin: 10px;
+	}
+}
+
+@media (max-width: 800px) {
+
+	.service_images {
+		flex-direction: column;
+	}
+
+	.service_image {
+		width: 80vw;
+		height: 25vh;
+		margin: 5px 10px;
+	}
+}
+
+.break {
+	height: 10vh;
+	max-height: 200px;
+	background-color: #423042;
+	grid-column: 1 / -1;
 }
 
 /*Follow us */
@@ -369,7 +441,7 @@ nav a:hover {
 }
 
 
-@media (max-width: 300px){
+@media (max-width: 375px){
 	.image_gallery_grid {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(21, 12.5vw);
@@ -550,7 +622,7 @@ input[type = email] {
 }
 
 input[type = submit] {
-	background-color: #423042;
+	background-color: var(--content_alt);
 	cursor: pointer;
 }
 
@@ -644,7 +716,7 @@ input[type = submit] {
 	
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
 	.footer_grid {
 		grid-template-columns: 1fr;
 	}
@@ -687,3 +759,7 @@ input[type = submit] {
 
 }
 
+.boxtest {
+	height: 40vh;
+	background-color: 
+}
