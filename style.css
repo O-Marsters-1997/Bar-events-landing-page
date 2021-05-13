@@ -7,8 +7,9 @@ Color scheme ideas list:
 */
 
 :root {
-	--nav: #fff;
-	--content: rgb(240, 243, 242);
+	--white: rgb(255, 255, 255);
+	--content: rgb(251, 245, 243);
+	/*content is also for white text */
 	--content-alt: rgb(66, 48, 66);
 	--content_alt: rgb(66, 48, 66);
 	--social_media: rgb(272, 236, 212);
@@ -23,9 +24,7 @@ Color scheme ideas list:
 	font-family: arial, helvetica, sans-serif;
 }
 
-h1 {
-	font-size: 3vh;
-}
+
 
 
 body {
@@ -54,6 +53,7 @@ button {
 .top_navigation {
 	background-color: var(--content); 
 	position: fixed;
+	height: min-content;
 	display: flex;
 	z-index: 999;
 	width: 100%;
@@ -160,7 +160,7 @@ nav a:hover {
 	flex-direction: column;
 	top: 0;
 	left: 0;
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	align-items: center;
 	color: white;
@@ -175,6 +175,7 @@ nav a:hover {
 
 .background_wrapper h1 {
 	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .background_overlay button {
@@ -298,17 +299,21 @@ nav a:hover {
 	grid-column: 2 / 3;
 	text-align: center;
 	font-weight: 600;
-	font-size: 2.5em;
-	padding-top: 10px;
-	margin: 1em 0;
+	font-size: 3em;
+	padding-bottom: .5em;
+	margin: 1.5em 0;
 }
 
 .all_services {
-	margin: 4em 0;
+	margin: 3em auto 5em auto;
 	text-transform: uppercase;
-	border: 2px solid var(--content_alt);
-	width: 150px;
+	border: 3px solid var(--content_alt);
+	border-radius: 15px;
+	width: ;
+	font-size: 1.3em;
+	font-weight: 400;
 	color: var(--content_alt);
+	background-color: var(--content);
 	grid-column: 1 / -1;
 	justify-self: center;
 	text-align: center;
@@ -344,6 +349,19 @@ nav a:hover {
 		height: 25vh;
 		margin: 5px 10px;
 	}
+
+	.image_overlay {
+		background: linear-gradient(180deg, 
+		rgba(66,48,66,0.8) 0%,
+		rgba(66,48,66,0.6) 40%,
+		rgba(66,48,66,0) 60%,
+		rgba(66,48,66,0) 100%);
+	}
+
+	.image_overlay_wrapper {
+		top: 10%;
+	}
+
 }
 
 /*Details Section */
@@ -351,7 +369,7 @@ nav a:hover {
 /* Repeated styles*/
 
 .mission_statement p, .expectations_text p {
-	font-size: clamp(1.2em, 1.8vw, 1.5em);
+	font-size: clamp(1.1em, 1.8vw, 1.6em);
 	max-width: 575px;
 	text-align: justify;
 	text-indent: 2em;
@@ -359,48 +377,34 @@ nav a:hover {
 
 
 .mission_statement h2, .expectations_text h2 {
-	margin-left: 2rem;
-	font-size: clamp(1em, 3vw, 2em);
+	padding-top: 1em;
+	font-size: clamp(1.6em, 4vw, 1.85em);
 }
 
 
 
 .mission_image {
 	grid-column: 1 / span 6;
-	max-height: 500px;
+	max-height: 550px;
 }
 
 .mission_statement  {
 	grid-column: 7 / -1;
 	background-color: var(--content_alt);
-	color: var(--content);
 }
 
 .mission_statement p {
 	margin: 1em auto 1em 4em  ;
 	text-align: justify;
+	color: var(--content); 
 }
 
 .mission_statement h2 {
-	
 	text-align: center;
 	max-width: 575px;
 	margin-right: auto;
-	margin-left: ;
-	
-	
-
-}
-
-@media(max-width: 800px) {
-	.mission_image {
-		grid-column: 1 / -1;
-	}
-
-	.mission_statement {
-		grid-column: 1 / -1;
-		padding-bottom: 2em;
-	}
+	margin-left: 2rem;
+	color: var(--white);
 }
 
 .expectations_text {
@@ -409,6 +413,7 @@ nav a:hover {
 
 .expectations_text p {
 	margin: 1em 4em 1em auto;
+	color: var(--main-text-alternate);
 }
 
 .expectations_text h2 {
@@ -420,6 +425,7 @@ nav a:hover {
 }
 
 .expectations_images {
+	margin-top: 2em;
 	display: flex;
 	flex-direction: column;
 	grid-column: 7 / -1;
@@ -427,19 +433,19 @@ nav a:hover {
 
 .expectations_images img {
 	max-width: 400px;
-	margin-left: 3em;
-	padding: 10px 0; 
+	margin: 0 auto;
+	padding: 10px 10px; 
 	border-radius: 50px: 
 }
 
 .expectations_images img:first-child {
 	max-height: 400px;
-	object-position: 50% 0%;
+	object-position: 20% 0%;
 	
 }
 
 .expectations_images img:nth-child(2) {
-	max-height: 25vh;
+	max-height: 350px;
 	object-position: 50% 10%;
 	object-position: 50% 80%;
 
@@ -461,54 +467,126 @@ nav a:hover {
 	}
 }
 
+
+@media(max-width: 800px) {
+	.mission_image {
+		grid-column: 1 / -1;
+	}
+
+	.mission_statement {
+		grid-column: 1 / -1;
+		padding-bottom: 2em;
+	}
+
+	.expectations_text {
+		grid-column: 1 / -1;	
+	}
+
+	.expectations_text h2 {
+		
+		text-align: left;
+		margin-left: 4em;
+		margin-right: auto;
+		max-width: 100%;
+	}
+
+	.expectations_images {
+		grid-column: 1 / -1;
+		grid-row: 5;
+	}
+
+
+}
+
+
+
+@media(max-width: 400px) {
+	.mission_statement p {
+		margin-left: 2em;
+		margin-right: 2em;
+		max-width: 100%;
+		padding: 0;
+		text-align: center;
+		text-indent: 0;
+	}
+
+	.mission_statement h2 {
+		margin: 0 auto;
+		padding: 2em 0 1em 0;
+		text-align: center;
+	}
+
+	.expectations_text p {
+		margin-left: 2em;
+		margin-right: 2em;
+		text-indent: 0;
+		text-align: center;
+		padding: 0;
+		margin-right: 0;
+		max-width: 100%;
+	}
+
+	.expectations_text h2 {
+		white-space: nowrap;
+		text-align: center;
+		margin: 0
+	}
+}
+
+
+
+
+
+
+
 /*Follow us */
 
 .social_media {
 	grid-column: 1 / -1;
-	margin-top: 25px;
-	padding-top: 2.5vh;
-	height: 15vh;
+	margin-top: 5vh;
+	padding-top: 5vh;
+	height: min-content;
 	width: 100%;
 	text-align: center;
-	color: var(--content);
-	font-size: 1.5em;
+	font-size: 1.3em;
 	font-style: italic;
 	background-color: var(--social_media_background);
+}
+
+.social_media > h1 {
+	font-size: clamp(1.1em 1vw 1.4em);
+	color: var(--content);
+	transition: color .3s ease-in; 
+}
+
+.social_media > h1:hover {
+	color: var(--social_media)
 }
 
 .social_media ul {
 	list-style: none;
 	display: flex;
 	justify-content: center;
-	padding: 0px
+	padding: 0 0 2em 0;
 }
 
 .social_media li {
 	padding: 10px;
 	color: var(--content);
-	font-size: 1rem;
+	font-size: 1.5rem;
+	transition: all .3s ease-in;
 }
 
-.Follow_us {
-	top:90%; 
-}
-
-.Follow_us_ul li:hover {
+.social_media li:hover {
 	color: rgb(272, 236, 212);
-	font-size: 1.1em;
-}
-
-.social_media > h1:hover {
 	font-size: 1.4em;
-	color: var(--social_media)
 }
 
 .Follow_us {
-	text-align: center;
 	position: ;
-	justify-items: center;
-	margin-top: 00%;
-	width: 35vw;
+	justify-self: center;
+	margin: 0;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -745,6 +823,7 @@ nav a:hover {
 	margin-top: 10px;
 	display: grid;
 	grid-template-columns: repeat(13, 1fr);
+	font-size: 1.2em;
 }
 
 .footer_grid a {
@@ -854,7 +933,7 @@ input[type = submit] {
 	}
 
 	.Events_description {
-		grid-column: 5 / span 2;
+		grid-column: 4 / span 2;
 	}
 
 	.Resources_description {
