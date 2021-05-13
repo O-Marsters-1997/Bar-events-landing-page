@@ -20,6 +20,7 @@ Color scheme ideas list:
 
 * {
 	box-sizing: border-box;
+	font-family: arial, helvetica, sans-serif;
 }
 
 h1 {
@@ -378,11 +379,16 @@ nav a:hover {
 .mission_statement p {
 	margin: 1em auto 1em 4em  ;
 	text-align: justify;
-	font-size: ;
 }
 
 .mission_statement h2 {
-	margin: 1em auto 0 4em;
+	
+	text-align: center;
+	max-width: 575px;
+	margin-right: auto;
+	margin-left: ;
+	
+	
 
 }
 
@@ -403,6 +409,14 @@ nav a:hover {
 
 .expectations_text p {
 	margin: 1em 4em 1em auto;
+}
+
+.expectations_text h2 {
+	margin-right: 4em;
+	margin-left: auto;
+	text-align: center;
+	max-width: 575px;
+	
 }
 
 .expectations_images {
@@ -441,6 +455,11 @@ nav a:hover {
 	}
 }
 
+@media(max-width: 1400px) {
+	.expectations_text h2 {
+		margin-right: 0;
+	}
+}
 
 /*Follow us */
 
