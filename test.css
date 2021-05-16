@@ -8,3 +8,8 @@ p {
 	margin: 1em 2em 1em auto;
 	max-width: 400px;
 }
+
+.expect_image-2 {
+	height: 100px;
+	width: 100px;
+}
